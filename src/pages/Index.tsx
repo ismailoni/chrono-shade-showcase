@@ -1,12 +1,46 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Navigation } from '@/components/Navigation'
+import { Hero } from '@/components/Hero'
+import { About } from '@/components/About'
+import { Projects } from '@/components/Projects'
+import { Contact } from '@/components/Contact'
+import { FloatingElements } from '@/components/FloatingElements'
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="relative min-h-screen">
+      {/* Floating Background Elements */}
+      <FloatingElements />
+      
+      {/* Navigation */}
+      <Navigation />
+      
+      {/* Main Content */}
+      <main>
+        <section id="home">
+          <Hero />
+        </section>
+        
+        <section id="about">
+          <About />
+        </section>
+        
+        <section id="projects">
+          <Projects />
+        </section>
+        
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
+      
+      {/* Footer */}
+      <footer className="glass border-t border-glass-border py-8 relative z-10">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <p className="text-muted-foreground">
+            © 2024 Full Stack Developer. Built with passion and modern web technologies.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
